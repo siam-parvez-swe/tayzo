@@ -1,0 +1,1772 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TAYZO — Premium Lifestyle Store</title>
+    <meta
+      name="description"
+      content="TAYZO premium minimalist lifestyle store and reseller ecosystem"
+    />
+    <meta name="theme-color" content="#070707" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="TAYZO — Wear Less. Mean More." />
+    <meta
+      property="og:description"
+      content="Premium minimalist essentials. Join the TAYZO reseller program."
+    />
+    <!-- Live howar por: <meta property="og:image" content="https://YOURSITE/cover.jpg"> -->
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🖤</text></svg>"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #070707;
+        --panel: #101010;
+        --line: #252525;
+        --gold: #d6b35a;
+        --text: #f6f4ef;
+        --muted: #9c9c9c;
+        --ok: #62c28b;
+        --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: Inter, Arial, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+      }
+      button,
+      input,
+      select {
+        font: inherit;
+      }
+      button {
+        cursor: pointer;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      :focus-visible {
+        outline: 2px solid var(--gold);
+        outline-offset: 2px;
+      }
+      .container {
+        width: min(1180px, 92%);
+        margin: auto;
+      }
+      .topbar {
+        background: linear-gradient(90deg, #9f7d28, var(--gold), #9f7d28);
+        color: #090909;
+        text-align: center;
+        padding: 8px;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 1.3px;
+      }
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: rgba(7, 7, 7, 0.88);
+        backdrop-filter: blur(18px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      }
+      .nav {
+        height: 76px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 25px;
+      }
+      .logo {
+        font-family: "Playfair Display", serif;
+        font-size: 30px;
+        font-weight: 700;
+        letter-spacing: 6px;
+        color: var(--gold);
+      }
+      .navlinks {
+        display: flex;
+        gap: 27px;
+        color: #c7c7c7;
+        font-size: 13px;
+      }
+      .navlinks a:hover {
+        color: var(--gold);
+      }
+      .actions {
+        display: flex;
+        gap: 9px;
+        align-items: center;
+      }
+      .iconbtn,
+      .goldbtn,
+      .outlinebtn {
+        border: 1px solid var(--line);
+        background: #111;
+        color: #fff;
+        border-radius: 999px;
+        padding: 10px 15px;
+        display: inline-block;
+      }
+      .iconbtn {
+        position: relative;
+        font-size: 18px;
+        padding: 9px 13px;
+      }
+      .badge {
+        position: absolute;
+        right: -3px;
+        top: -5px;
+        background: var(--gold);
+        color: #000;
+        border-radius: 50%;
+        width: 18px;
+        height: 18px;
+        font-size: 10px;
+        display: grid;
+        place-items: center;
+        font-weight: 800;
+        font-style: normal;
+      }
+      .goldbtn {
+        background: var(--gold);
+        border-color: var(--gold);
+        color: #080808;
+        font-weight: 700;
+      }
+      .outlinebtn:hover,
+      .iconbtn:hover {
+        border-color: var(--gold);
+        color: var(--gold);
+      }
+      .currency-select {
+        background: #111;
+        color: var(--gold);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 6px 10px;
+        font-size: 12px;
+      }
+      .hero {
+        min-height: 640px;
+        display: grid;
+        place-items: center;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        background:
+          radial-gradient(
+            circle at 50% 20%,
+            rgba(214, 179, 90, 0.16),
+            transparent 30%
+          ),
+          linear-gradient(180deg, #0d0d0d, #070707);
+      }
+      .hero-content {
+        position: relative;
+        max-width: 850px;
+        padding: 80px 0;
+      }
+      .kicker {
+        color: var(--gold);
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        font-size: 12px;
+        font-weight: 700;
+        margin-bottom: 18px;
+      }
+      .hero h1 {
+        font:
+          700 clamp(48px, 8vw, 88px)/0.98 "Playfair Display",
+          serif;
+        letter-spacing: 1px;
+      }
+      .hero p {
+        max-width: 680px;
+        margin: 25px auto 34px;
+        color: var(--muted);
+        font-size: 16px;
+      }
+      .hero-actions {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      section {
+        padding: 88px 0;
+      }
+      .sectionhead {
+        text-align: center;
+        margin-bottom: 42px;
+      }
+      .sectionhead small {
+        color: var(--gold);
+        letter-spacing: 3px;
+        text-transform: uppercase;
+      }
+      .sectionhead h2 {
+        font:
+          600 42px "Playfair Display",
+          serif;
+        margin: 7px 0;
+      }
+      .sectionhead p {
+        color: var(--muted);
+      }
+      .categories {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 15px;
+      }
+      .cat {
+        height: 240px;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 25px;
+        display: flex;
+        align-items: end;
+        background:
+          radial-gradient(
+            circle at 70% 25%,
+            rgba(214, 179, 90, 0.18),
+            transparent 25%
+          ),
+          linear-gradient(145deg, #171717, #0d0d0d);
+        transition: 0.35s;
+        cursor: pointer;
+      }
+      .cat:hover {
+        transform: translateY(-6px);
+        border-color: #8e7436;
+      }
+      .cat h3 {
+        font:
+          600 27px "Playfair Display",
+          serif;
+      }
+      .cat span {
+        display: block;
+        color: var(--gold);
+        font-size: 11px;
+        letter-spacing: 2px;
+        margin-bottom: 5px;
+      }
+      .shop {
+        background: #0a0a0a;
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+      }
+      .shopbar {
+        display: flex;
+        justify-content: space-between;
+        gap: 15px;
+        align-items: center;
+        margin-bottom: 28px;
+        flex-wrap: wrap;
+      }
+      .filters {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+      .filter {
+        background: #111;
+        border: 1px solid var(--line);
+        color: #bbb;
+        border-radius: 999px;
+        padding: 9px 15px;
+      }
+      .filter.active,
+      .filter:hover {
+        border-color: var(--gold);
+        color: var(--gold);
+      }
+      .search {
+        background: #111;
+        border: 1px solid var(--line);
+        color: #fff;
+        padding: 11px 15px;
+        border-radius: 10px;
+        min-width: 230px;
+      }
+      .products {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 18px;
+      }
+      .product {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        overflow: hidden;
+        transition: 0.3s;
+      }
+      .product:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow);
+        border-color: #3a3322;
+      }
+      .product-img {
+        height: 265px;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(135deg, #1d1d1d, #0c0c0c);
+        font-size: 52px;
+        position: relative;
+        cursor: pointer;
+      }
+      .wishlist-btn {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        background: rgba(0, 0, 0, 0.6);
+        border: 1px solid var(--line);
+        color: #fff;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        font-size: 14px;
+        filter: grayscale(1);
+      }
+      .wishlist-btn:hover,
+      .wishlist-btn.active {
+        border-color: var(--gold);
+        filter: none;
+      }
+      .product-info {
+        padding: 18px;
+      }
+      .tag {
+        color: var(--gold);
+        font-size: 10px;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+      }
+      .product h3 {
+        font-size: 16px;
+        margin: 6px 0;
+        cursor: pointer;
+      }
+      .product h3:hover {
+        color: var(--gold);
+      }
+      .product p {
+        color: var(--muted);
+        font-size: 12px;
+      }
+      .price {
+        font-weight: 800;
+        margin-top: 12px;
+        font-size: 17px;
+      }
+      .old {
+        text-decoration: line-through;
+        color: #666;
+        font-size: 12px;
+        margin-left: 7px;
+        font-weight: 400;
+      }
+      .btn-group {
+        display: flex;
+        gap: 8px;
+        margin-top: 14px;
+      }
+      .add {
+        flex: 1;
+        padding: 10px;
+        border-radius: 9px;
+        border: 1px solid var(--gold);
+        background: transparent;
+        color: var(--gold);
+        font-weight: 700;
+      }
+      .add:hover {
+        background: var(--gold);
+        color: #000;
+      }
+      .quickview-btn {
+        padding: 10px 12px;
+        border-radius: 9px;
+        border: 1px solid var(--line);
+        background: #181818;
+        color: #ccc;
+      }
+      .quickview-btn:hover {
+        border-color: var(--gold);
+      }
+      .features {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+      .reseller {
+        background: linear-gradient(120deg, #111, #0a0a0a);
+        border-top: 1px solid var(--line);
+      }
+      .resellerbox {
+        border: 1px solid #3a3220;
+        border-radius: 22px;
+        padding: 55px;
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 40px;
+        background: radial-gradient(
+          circle at 80% 10%,
+          rgba(214, 179, 90, 0.12),
+          transparent 35%
+        );
+      }
+      .resellerbox h2 {
+        font:
+          600 43px "Playfair Display",
+          serif;
+      }
+      .resellerbox p {
+        color: var(--muted);
+        margin: 15px 0 25px;
+      }
+      .statgrid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+      .stat {
+        padding: 20px;
+        border: 1px solid var(--line);
+        border-radius: 13px;
+        background: #0c0c0c;
+      }
+      .stat strong {
+        font-size: 24px;
+        color: var(--gold);
+        display: block;
+      }
+      .stat small {
+        color: var(--muted);
+      }
+      footer {
+        padding: 65px 0 25px;
+        border-top: 1px solid var(--line);
+      }
+      .foot {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 35px;
+      }
+      .foot p,
+      .foot a,
+      .foot button.lnk {
+        color: var(--muted);
+        font-size: 13px;
+        background: none;
+        border: 0;
+        padding: 0;
+        text-align: left;
+      }
+      .foot a:hover,
+      .foot button.lnk:hover {
+        color: var(--gold);
+      }
+      .foot h4 {
+        margin-bottom: 15px;
+      }
+      .foot li {
+        list-style: none;
+        margin: 8px 0;
+      }
+      .copy {
+        text-align: center;
+        color: #666;
+        border-top: 1px solid var(--line);
+        margin-top: 45px;
+        padding-top: 20px;
+        font-size: 12px;
+      }
+      .overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 90;
+        display: none;
+      }
+      .overlay.show {
+        display: block;
+      }
+      .drawer {
+        position: fixed;
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: min(430px, 94%);
+        background: #0c0c0c;
+        border-left: 1px solid var(--line);
+        z-index: 100;
+        transform: translateX(100%);
+        transition: 0.35s;
+        padding: 25px;
+        overflow: auto;
+        visibility: hidden;
+      }
+      .drawer.open {
+        transform: translateX(0);
+        visibility: visible;
+      }
+      .drawerhead {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+      .close {
+        background: none;
+        border: 0;
+        color: #aaa;
+        font-size: 25px;
+      }
+      .cartitem {
+        display: grid;
+        grid-template-columns: 60px 1fr auto;
+        gap: 12px;
+        padding: 15px 0;
+        border-bottom: 1px solid var(--line);
+      }
+      .thumb {
+        width: 60px;
+        height: 60px;
+        background: #1a1a1a;
+        border-radius: 10px;
+        display: grid;
+        place-items: center;
+        font-size: 25px;
+        overflow: hidden;
+      }
+      .thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .cartitem small {
+        color: var(--muted);
+        display: block;
+      }
+      .qty {
+        display: flex;
+        gap: 7px;
+        align-items: center;
+        margin-top: 5px;
+      }
+      .qty button {
+        background: #1b1b1b;
+        border: 1px solid var(--line);
+        color: #fff;
+        width: 24px;
+        height: 24px;
+        border-radius: 5px;
+      }
+      .sumrow {
+        display: flex;
+        justify-content: space-between;
+        color: var(--muted);
+        font-size: 14px;
+        padding-top: 10px;
+      }
+      .total {
+        display: flex;
+        justify-content: space-between;
+        font-size: 18px;
+        font-weight: 800;
+        padding: 14px 0 22px;
+      }
+      .checkout {
+        width: 100%;
+        padding: 14px;
+        background: var(--gold);
+        border: 0;
+        border-radius: 10px;
+        font-weight: 800;
+        color: #080808;
+      }
+      .modal {
+        position: fixed;
+        z-index: 110;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: min(520px, 92%);
+        max-height: 90vh;
+        overflow-y: auto;
+        background: #101010;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 28px;
+        display: none;
+        box-shadow: var(--shadow);
+      }
+      .modal.show {
+        display: block;
+      }
+      .modal h3 {
+        font:
+          600 30px "Playfair Display",
+          serif;
+      }
+      .modal p {
+        color: var(--muted);
+        font-size: 13px;
+        margin: 8px 0 20px;
+      }
+      .modal input,
+      .modal select {
+        width: 100%;
+        background: #181818;
+        color: #fff;
+        border: 1px solid var(--line);
+        padding: 13px;
+        border-radius: 9px;
+        margin-bottom: 12px;
+      }
+      .err {
+        color: #e07a7a;
+        font-size: 12px;
+        margin: -6px 0 10px;
+        display: none;
+      }
+      #resellerDashboardModal {
+        width: min(800px, 95%);
+      }
+      .dash-stats {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+        margin-bottom: 20px;
+      }
+      .dash-card {
+        background: #151515;
+        border: 1px solid var(--line);
+        padding: 15px;
+        border-radius: 12px;
+        text-align: center;
+      }
+      .dash-card h4 {
+        font-size: 12px;
+        color: var(--muted);
+        margin-bottom: 5px;
+      }
+      .dash-card b {
+        font-size: 18px;
+        color: var(--gold);
+      }
+      .dash-card small {
+        display: block;
+        color: #777;
+        font-size: 11px;
+      }
+      .table-container {
+        max-height: 240px;
+        overflow: auto;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        margin-top: 10px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 13px;
+        text-align: left;
+        min-width: 480px;
+      }
+      th,
+      td {
+        padding: 10px;
+        border-bottom: 1px solid var(--line);
+      }
+      th {
+        background: #181818;
+        color: var(--gold);
+        position: sticky;
+        top: 0;
+      }
+      .notice {
+        font-size: 11px;
+        color: #777;
+        margin-top: 12px;
+      }
+      .empty {
+        text-align: center;
+        color: #777;
+        padding: 40px 0;
+      }
+      .toast {
+        position: fixed;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%) translateY(100px);
+        background: var(--gold);
+        color: #080808;
+        padding: 12px 24px;
+        border-radius: 30px;
+        font-weight: 700;
+        z-index: 150;
+        transition: 0.3s;
+        box-shadow: var(--shadow);
+      }
+      .toast.show {
+        transform: translateX(-50%) translateY(0);
+      }
+      .size-options {
+        display: flex;
+        gap: 8px;
+        margin: 8px 0 15px;
+        flex-wrap: wrap;
+      }
+      .size-btn {
+        border: 1px solid var(--line);
+        background: #151515;
+        color: #fff;
+        padding: 8px 14px;
+        border-radius: 8px;
+      }
+      .size-btn.active,
+      .size-btn:hover {
+        border-color: var(--gold);
+        color: var(--gold);
+      }
+      .wa {
+        position: fixed;
+        right: 18px;
+        bottom: 22px;
+        z-index: 80;
+        width: 54px;
+        height: 54px;
+        border-radius: 50%;
+        background: #25d366;
+        display: none;
+        place-items: center;
+        font-size: 26px;
+        box-shadow: var(--shadow);
+      }
+      @media (max-width: 950px) {
+        .navlinks {
+          display: none;
+        }
+        .categories,
+        .products {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .resellerbox {
+          grid-template-columns: 1fr;
+        }
+        .dash-stats {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .foot {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (max-width: 600px) {
+        .nav {
+          height: 66px;
+        }
+        .logo {
+          font-size: 25px;
+        }
+        .actions .goldbtn {
+          display: none;
+        }
+        .hero {
+          min-height: 570px;
+        }
+        .categories,
+        .products,
+        .features,
+        .foot {
+          grid-template-columns: 1fr;
+        }
+        .sectionhead h2 {
+          font-size: 34px;
+        }
+        .resellerbox {
+          padding: 30px;
+        }
+        .dash-stats {
+          grid-template-columns: 1fr;
+        }
+      }
+      .product-img {
+        overflow: hidden;
+      }
+      .product-img img,
+      #quickViewContent img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .product-img img,
+      .em {
+        transition: transform 0.5s;
+      }
+      .em {
+        display: inline-block;
+      }
+      .product:hover .product-img img,
+      .product:hover .em {
+        transform: scale(1.08);
+      }
+      @keyframes rise {
+        from {
+          opacity: 0;
+          transform: translateY(16px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      .hero-content {
+        animation: rise 0.9s both;
+      }
+      .coupon {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 6px;
+      }
+      .coupon input {
+        flex: 1;
+        background: #181818;
+        color: #fff;
+        border: 1px solid var(--line);
+        padding: 10px 12px;
+        border-radius: 9px;
+        text-transform: uppercase;
+      }
+      .lnkbtn {
+        background: none;
+        border: 0;
+        color: var(--gold);
+        font-size: 13px;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          transition: none !important;
+          animation: none !important;
+          scroll-behavior: auto !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="topbar" id="topbar"></div>
+    <header>
+      <div class="container nav">
+        <a class="logo" href="#home">TAYZO</a>
+        <nav class="navlinks">
+          <a href="#home">Home</a><a href="#shop">Shop</a
+          ><a href="#collections">Collections</a
+          ><a href="#reseller">Reseller Partner</a>
+        </nav>
+        <div class="actions">
+          <select
+            class="currency-select"
+            id="currencySelect"
+            onchange="changeCurrency()"
+            aria-label="Currency"
+          >
+            <option value="BDT">৳ BDT</option>
+            <option value="USD">$ USD</option>
+          </select>
+          <button
+            class="iconbtn"
+            onclick="openWishlist()"
+            title="Wishlist"
+            aria-label="Wishlist"
+          >
+            ❤️<i class="badge" id="wishlistCount">0</i>
+          </button>
+          <button
+            class="iconbtn"
+            onclick="openCart()"
+            title="Cart"
+            aria-label="Cart"
+          >
+            🛍<i class="badge" id="cartCount">0</i>
+          </button>
+          <button class="goldbtn" onclick="openModal('loginModal')">
+            Account
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-content">
+          <div class="kicker">Quiet Confidence • Modern Essentials</div>
+          <h1>Wear Less.<br />Mean More.</h1>
+          <p>
+            TAYZO creates refined everyday essentials built around quality,
+            simplicity and purpose — designed to make you feel more confident.
+          </p>
+          <div class="hero-actions">
+            <a class="goldbtn" href="#shop">Explore Collection</a
+            ><a class="outlinebtn" href="#reseller">Become a Reseller</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="collections">
+        <div class="container">
+          <div class="sectionhead">
+            <small>Curated Categories</small>
+            <h2>Designed Without Noise</h2>
+            <p>Minimal pieces for a confident wardrobe.</p>
+          </div>
+          <div class="categories">
+            <div class="cat" onclick="setFilter('Shirts')">
+              <div>
+                <span>ESSENTIAL</span>
+                <h3>Shirts</h3>
+              </div>
+            </div>
+            <div class="cat" onclick="setFilter('T-Shirts')">
+              <div>
+                <span>EVERYDAY</span>
+                <h3>T-Shirts</h3>
+              </div>
+            </div>
+            <div class="cat" onclick="setFilter('Pants')">
+              <div>
+                <span>TAILORED</span>
+                <h3>Pants</h3>
+              </div>
+            </div>
+            <div class="cat" onclick="setFilter('Shoes')">
+              <div>
+                <span>FOOTWEAR</span>
+                <h3>Shoes</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="shop" id="shop">
+        <div class="container">
+          <div class="sectionhead">
+            <small>The Collection</small>
+            <h2>Featured Products</h2>
+            <p>Select your favorite minimalist styles.</p>
+          </div>
+          <div class="shopbar">
+            <div class="filters">
+              <button
+                class="filter active"
+                data-filter="All"
+                onclick="setFilter('All')"
+              >
+                All
+              </button>
+              <button
+                class="filter"
+                data-filter="Shirts"
+                onclick="setFilter('Shirts')"
+              >
+                Shirts
+              </button>
+              <button
+                class="filter"
+                data-filter="T-Shirts"
+                onclick="setFilter('T-Shirts')"
+              >
+                T-Shirts
+              </button>
+              <button
+                class="filter"
+                data-filter="Pants"
+                onclick="setFilter('Pants')"
+              >
+                Pants
+              </button>
+              <button
+                class="filter"
+                data-filter="Shoes"
+                onclick="setFilter('Shoes')"
+              >
+                Shoes
+              </button>
+            </div>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap">
+              <select
+                class="search"
+                id="sort"
+                onchange="renderProducts()"
+                aria-label="Sort products"
+                style="min-width: 0"
+              >
+                <option value="">Sort: Featured</option>
+                <option value="lo">Price: Low to High</option>
+                <option value="hi">Price: High to Low</option>
+              </select>
+              <input
+                class="search"
+                id="search"
+                placeholder="Search products..."
+                oninput="renderProducts()"
+                aria-label="Search products"
+              />
+            </div>
+          </div>
+          <div class="products" id="products"></div>
+        </div>
+      </section>
+
+      <section class="reseller" id="reseller">
+        <div class="container">
+          <div class="resellerbox">
+            <div>
+              <div class="kicker">TAYZO Partner Network</div>
+              <h2>Build Your Own Store.</h2>
+              <p>
+                Join the reseller program, promote TAYZO products on your social
+                channels, and earn a confirmed profit of ৳200 per piece on every
+                successful order.
+              </p>
+              <div style="display: flex; gap: 10px; flex-wrap: wrap">
+                <button class="goldbtn" onclick="openModal('resellerModal')">
+                  Apply as Reseller
+                </button>
+                <button
+                  class="outlinebtn"
+                  onclick="openModal('resellerLoginModal')"
+                >
+                  Reseller Login / Dashboard
+                </button>
+                <button class="outlinebtn" onclick="openModal('refModal')">
+                  Referral Link &amp; Payout
+                </button>
+              </div>
+            </div>
+            <div class="statgrid">
+              <div class="stat">
+                <strong>৳200</strong><small>Profit Per Piece</small>
+              </div>
+              <div class="stat">
+                <strong>1</strong><small>Partner Dashboard</small>
+              </div>
+              <div class="stat">
+                <strong>Ref link</strong><small>?ref=YOURCODE</small>
+              </div>
+              <div class="stat">
+                <strong>bKash / Nagad</strong><small>Payout</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="foot">
+          <div>
+            <a class="logo" href="#home">TAYZO</a>
+            <p style="margin-top: 15px; max-width: 320px">
+              A premium minimalist lifestyle ecosystem built around quiet
+              confidence and quality.
+            </p>
+          </div>
+          <div>
+            <h4>Shop</h4>
+            <ul>
+              <li><a href="#shop">All Products</a></li>
+              <li><a href="#collections">Collections</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Support</h4>
+            <ul>
+              <li>
+                <button class="lnk" onclick="openInfo('shipping')">
+                  Shipping
+                </button>
+              </li>
+              <li>
+                <button class="lnk" onclick="openInfo('returns')">
+                  Returns
+                </button>
+              </li>
+              <li>
+                <button class="lnk" onclick="openInfo('contact')">
+                  Contact Us
+                </button>
+              </li>
+              <li>
+                <button class="lnk" onclick="openModal('trackModal')">
+                  Track Order
+                </button>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4>Partner</h4>
+            <ul>
+              <li><a href="#reseller">Reseller Program</a></li>
+              <li>
+                <button class="lnk" onclick="openInfo('terms')">
+                  Terms &amp; Conditions
+                </button>
+              </li>
+              <li>
+                <button class="lnk" onclick="openInfo('privacy')">
+                  Privacy Policy
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="copy">©️ 2026 TAYZO. All rights reserved.</div>
+      </div>
+    </footer>
+
+    <div class="overlay" id="overlay" onclick="closeAll()"></div>
+
+    <aside class="drawer" id="cart" aria-label="Cart">
+      <div class="drawerhead">
+        <h2>Your Cart</h2>
+        <button class="close" onclick="closeAll()" aria-label="Close">×</button>
+      </div>
+      <div id="cartItems"></div>
+      <div id="cartSummary"></div>
+      <button class="checkout" onclick="openCheckoutModal()">
+        Proceed to Checkout
+      </button>
+    </aside>
+
+    <aside class="drawer" id="wishlistDrawer" aria-label="Wishlist">
+      <div class="drawerhead">
+        <h2>Your Wishlist</h2>
+        <button class="close" onclick="closeAll()" aria-label="Close">×</button>
+      </div>
+      <div id="wishlistItems"></div>
+    </aside>
+
+    <div class="modal" id="quickViewModal">
+      <button
+        class="close"
+        style="float: right"
+        onclick="closeAll()"
+        aria-label="Close"
+      >
+        ×
+      </button>
+      <div id="quickViewContent"></div>
+    </div>
+
+    <div class="modal" id="checkoutModal">
+      <button
+        class="close"
+        style="float: right"
+        onclick="closeAll()"
+        aria-label="Close"
+      >
+        ×
+      </button>
+      <h3>Order Checkout</h3>
+      <p id="checkoutSummary">
+        Fill out your shipping information to confirm the order.
+      </p>
+      <input
+        id="cName"
+        placeholder="Full Name"
+        autocomplete="name"
+        aria-label="Full name"
+      />
+      <input
+        id="cPhone"
+        placeholder="Mobile Number (01XXXXXXXXX)"
+        inputmode="numeric"
+        maxlength="14"
+        autocomplete="tel"
+        aria-label="Mobile number"
+      />
+      <div class="err" id="phoneErr">
+        Enter a valid Bangladeshi mobile number, e.g. 01712345678.
+      </div>
+      <input
+        id="cAddress"
+        placeholder="Full Address (House/Road, Area, City)"
+        autocomplete="street-address"
+        aria-label="Full address"
+      />
+      <div class="notice" id="refNote" style="margin: -4px 0 12px"></div>
+      <button class="checkout" onclick="submitOrder()">
+        Place Order (Cash on Delivery)
+      </button>
+    </div>
+
+    <div class="modal" id="loginModal">
+      <button
+        class="close"
+        style="float: right"
+        onclick="closeAll()"
+        aria-label="Close"
+      >
+        ×
+      </button>
+      <h3>Customer Login</h3>
+      <p>Sign in to your TAYZO customer account.</p>
+      <input placeholder="Email or Phone" aria-label="Email or phone" /><input
+        type="password"
+        placeholder="Password"
+        aria-label="Password"
+      /><button
+        class="checkout"
+        onclick="
+          alert('Demo only: customer accounts are not connected yet.');
+          closeAll();
+        "
+      >
+        Sign In
+      </button>
+      <div class="notice">Demo environment — no real data is saved.</div>
+    </div>
+
+    <div class="modal" id="resellerModal">
+      <button
+        class="close"
+        style="float: right"
+        onclick="closeAll()"
+        aria-label="Close"
+      >
+        ×
+      </button>
+      <h3>Reseller Application</h3>
+      <p>Join our partner network and earn ৳200 profit per piece.</p>
+      <input id="rname" placeholder="Full Name" aria-label="Full name" /><input
+        id="rphone"
+        placeholder="Mobile Number (bKash/Nagad)"
+        inputmode="numeric"
+        aria-label="Mobile number"
+      /><input
+        id="remail"
+        placeholder="Email Address"
+        type="email"
+        aria-label="Email address"
+      />
+      <div class="err" id="rErr"></div>
+      <button class="checkout" onclick="applyReseller()">
+        Submit Application
+      </button>
+    </div>
+
+    <div class="modal" id="resellerLoginModal">
+      <button
+        class="close"
+        style="float: right"
+        onclick="closeAll()"
+        aria-label="Close"
+      >
+        ×
+      </button>
+      <h3>Reseller Partner Sign In</h3>
+      <p>Enter your registered phone or email to open your dashboard.</p>
+      <input
+        id="resEmail"
+        placeholder="Email or Phone Number"
+        aria-label="Email or phone"
+      /><input
+        id="resPass"
+        type="password"
+        placeholder="Password"
+        aria-label="Password"
+      />
+      <div class="err" id="resErr"></div>
+      <button class="checkout" onclick="loginResellerDashboard()">
+        Access Dashboard
+      </button>
+      <div class="notice">
+        Demo only: this dashboard shows sample data. Real reseller login needs a
+        backend.
+      </div>
+    </div>
+
+    <div class="modal" id="resellerDashboardModal">
+      <button
+        class="close"
+        style="float: right"
+        onclick="closeAll()"
+        aria-label="Close"
+      >
+        ×
+      </button>
+      <h3>Reseller Performance Dashboard</h3>
+      <p>Sample sales and profit summary (fixed ৳200 profit per piece).</p>
+      <div class="dash-stats">
+        <div class="dash-card">
+          <h4>Total Sales</h4>
+          <b id="dashTotalSales">৳0</b><small id="dashTotalQty"></small>
+        </div>
+        <div class="dash-card">
+          <h4>Last Month Sales</h4>
+          <b id="dashMonthSales">৳0</b><small id="dashMonthQty"></small>
+        </div>
+        <div class="dash-card">
+          <h4>Last Week Sales</h4>
+          <b id="dashWeekSales">৳0</b><small id="dashWeekQty"></small>
+        </div>
+        <div class="dash-card">
+          <h4>Total Profit</h4>
+          <b id="dashTotalProfit" style="color: var(--ok)">৳0</b
+          ><small id="dashProfitNote"></small>
+        </div>
+      </div>
+      <h4 style="font-size: 14px; margin-bottom: 5px">
+        Sales Record &amp; Profit Breakdown
+      </h4>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Week</th>
+              <th>Month</th>
+              <th>Total Qty</th>
+              <th>Total Sales</th>
+              <th>Profit</th>
+            </tr>
+          </thead>
+          <tbody id="dashTableBody"></tbody>
+        </table>
+      </div>
+      <div class="notice">
+        Profit = pieces sold × ৳200. Quantities are tracked per period.
+      </div>
+    </div>
+
+    <div class="modal" id="trackModal">
+      <button
+        class="close"
+        style="float: right"
+        onclick="closeAll()"
+        aria-label="Close"
+      >
+        ×
+      </button>
+      <h3>Track Your Order</h3>
+      <p>Enter the mobile number you used at checkout.</p>
+      <input
+        id="trackPhone"
+        placeholder="01XXXXXXXXX"
+        inputmode="numeric"
+        aria-label="Mobile number"
+      />
+      <button class="checkout" onclick="trackOrders()">Find Orders</button>
+      <div id="trackResult" style="margin-top: 14px"></div>
+      <div class="notice">
+        Shows orders placed from this browser. Live status updates need the
+        backend.
+      </div>
+    </div>
+
+    <div class="modal" id="refModal">
+      <button
+        class="close"
+        style="float: right"
+        onclick="closeAll()"
+        aria-label="Close"
+      >
+        ×
+      </button>
+      <h3>Your Referral Link</h3>
+      <p>
+        Enter your reseller code. Orders placed through this link are tagged to
+        you.
+      </p>
+      <input
+        id="refCodeIn"
+        placeholder="Your code (e.g. RS102)"
+        maxlength="20"
+        aria-label="Reseller code"
+      />
+      <button class="checkout" onclick="makeRefLink()">Create Link</button>
+      <div id="refOut" style="display: none; margin-top: 14px">
+        <input id="refLink" readonly aria-label="Referral link" />
+        <div style="display: flex; gap: 8px; flex-wrap: wrap">
+          <button class="goldbtn" onclick="copyRef()">Copy</button
+          ><a class="outlinebtn" id="waShare" target="_blank" rel="noopener"
+            >WhatsApp</a
+          ><a class="outlinebtn" id="fbShare" target="_blank" rel="noopener"
+            >Facebook</a
+          >
+        </div>
+      </div>
+      <h3 style="margin-top: 28px; font-size: 24px">Request Payout</h3>
+      <p id="payNote"></p>
+      <select id="payMethod" aria-label="Payout method">
+        <option>bKash</option>
+        <option>Nagad</option>
+      </select>
+      <input
+        id="payNum"
+        placeholder="bKash / Nagad number"
+        inputmode="numeric"
+        aria-label="Payout number"
+      /><input
+        id="payAmt"
+        placeholder="Amount (BDT)"
+        inputmode="numeric"
+        aria-label="Amount"
+      />
+      <div class="err" id="payErr"></div>
+      <button class="checkout" onclick="requestPayout()">Request Payout</button>
+    </div>
+
+    <div class="modal" id="infoModal">
+      <button
+        class="close"
+        style="float: right"
+        onclick="closeAll()"
+        aria-label="Close"
+      >
+        ×
+      </button>
+      <h3 id="infoTitle"></h3>
+      <p id="infoBody" style="white-space: pre-line; font-size: 14px"></p>
+    </div>
+
+    <a
+      class="wa"
+      id="waFloat"
+      target="_blank"
+      rel="noopener"
+      aria-label="Chat on WhatsApp"
+      >💬</a
+    >
+    <div class="toast" id="toastNotice" role="status"></div>
+
+    <script>
+      // ===== CONFIG — edit these before going live =====
+      const CONFIG = {
+        WHATSAPP: "",            // e.g. "8801712345678"
+        API_URL: "",             // Google Apps Script Web App URL; blank = browser-only demo mode
+        DELIVERY_CHARGE: 100,    // BDT
+        FREE_DELIVERY_OVER: 3000,// BDT subtotal for free delivery
+        PROFIT_PER_PIECE: 200,
+        MIN_PAYOUT: 500,        // BDT
+        USD_RATE: 118
+      };
+
+      const products=[
+      {id:1,name:"Signature Oxford Shirt",cat:"Shirts",price:1890,old:2290,icon:"👔",desc:"Clean executive silhouette with breathable cotton."},
+      {id:2,name:"Essential Oversized Tee",cat:"T-Shirts",price:990,old:1290,icon:"👕",desc:"Heavyweight everyday comfortable fit."},
+      {id:3,name:"Monochrome Chino",cat:"Pants",price:1690,old:1990,icon:"👖",desc:"Modern relaxed tailoring for versatile wear."},
+      {id:4,name:"TAYZO Minimal Runner",cat:"Shoes",price:2890,old:3490,icon:"👟",desc:"Minimal everyday luxury footwear."},
+      {id:5,name:"Premium Black Shirt",cat:"Shirts",price:1990,old:2390,icon:"🖤",desc:"Structured premium dark finish."},
+      {id:6,name:"Core Heavyweight Tee",cat:"T-Shirts",price:1090,old:1390,icon:"◼️",desc:"400 GSM high-grade concept."},
+      {id:7,name:"Relaxed Straight Pants",cat:"Pants",price:1790,old:2190,icon:"◾",desc:"Clean straight tailored fit."},
+      {id:8,name:"Eclipse Low Sneaker",cat:"Shoes",price:3190,old:3790,icon:"👞",desc:"Monochrome leather concept styling."}
+      ];
+      const SIZES={Shirts:["M","L","XL"],"T-Shirts":["M","L","XL"],Pants:["30","32","34","36"],Shoes:["40","41","42","43","44"]};
+
+      // Sample reseller data: pieces sold per period (sales & profit are computed from these)
+      const resellerSales=[
+        {id:1,week:4,month:8,total:12},{id:2,week:6,month:12,total:18},
+        {id:3,week:3,month:6,total:9},{id:5,week:2,month:4,total:6}
+      ];
+
+      const INFO={
+        shipping:{t:"Shipping",b:"Delivery charge: ৳"+CONFIG.DELIVERY_CHARGE+". Free delivery on orders over ৳"+CONFIG.FREE_DELIVERY_OVER.toLocaleString("en-BD")+".\nWe confirm every order by phone before dispatch.\n(Edit delivery time and areas here.)"},
+        returns:{t:"Returns",b:"Wrong size or damaged item? Contact us within 3 days of delivery for an exchange.\n(Edit your return policy here.)"},
+        contact:{t:"Contact Us",b:"WhatsApp / Phone: add your number here\nEmail: add your email here"},
+        terms:{t:"Terms & Conditions",b:"Reseller profit is ৳"+CONFIG.PROFIT_PER_PIECE+" per piece on each successful, delivered order.\nCoupon discount reseller-er ৳"+CONFIG.PROFIT_PER_PIECE+" profit-e kono effect felbe na.\nPayout method: bKash / Nagad.\nMinimum payout and payout schedule: add here.\nOrders that are returned or cancelled do not earn profit."},
+        privacy:{t:"Privacy Policy",b:"We use your name, phone and address only to process and deliver your order. We do not sell your data.\n(Edit with your full policy.)"}
+      };
+
+      // Add a photo to any product with img:"images/name.jpg" (emoji is used when img is empty)
+      const COUPONS={TAYZO10:10,WELCOME5:5}; // code: percent off
+      let coupon="";
+      let filter="All", cart=[], wishlist=[], currentCurrency="BDT", selectedSize=null, refCode="";
+
+      // ---- storage helpers (safe if storage is blocked) ----
+      const store={
+        get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},
+        set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+      };
+      function persist(){store.set("tz_cart",cart);store.set("tz_wish",wishlist);store.set("tz_cur",currentCurrency);store.set("tz_coupon",coupon)}
+
+      function formatPrice(a){
+        return currentCurrency==="USD" ? "$"+(a/CONFIG.USD_RATE).toFixed(2) : "৳"+a.toLocaleString("en-BD");
+      }
+      function changeCurrency(){
+        currentCurrency=document.getElementById("currencySelect").value;
+        persist();renderAll();
+      }
+      async function postToBackend(payload){
+        if(!CONFIG.API_URL) return {ok:true,demo:true};
+        try{
+          const res=await fetch(CONFIG.API_URL,{
+            method:"POST",
+            headers:{"Content-Type":"text/plain;charset=utf-8"},
+            body:JSON.stringify(payload)
+          });
+          const data=await res.json();
+          if(!data.ok) throw new Error(data.error||"Request failed");
+          return data;
+        }catch(e){
+          console.error("Backend request failed:",e);
+          showToast("Server connection failed. Please try again.");
+          return {ok:false,error:e.message};
+        }
+      }
+
+      function showToast(msg){
+        const t=document.getElementById("toastNotice");t.textContent=msg;t.classList.add("show");
+        clearTimeout(showToast.t);showToast.t=setTimeout(()=>t.classList.remove("show"),2500);
+      }
+      const $=id=>document.getElementById(id);
+      const prod=id=>products.find(p=>p.id===id);
+      const pic=p=>p.img?⁠ <img src="${p.img}" alt="${p.name}" loading="lazy"> ⁠:⁠ <span class="em">${p.icon}</span> ⁠;
+
+      function renderProducts(){
+        const q=$("search").value.toLowerCase();
+        const list=products.filter(p=>(filter==="All"||p.cat===filter)&&⁠ ${p.name} ${p.cat} ⁠.toLowerCase().includes(q));
+        const so=$("sort").value;if(so)list.sort((a,b)=>so==="lo"?a.price-b.price:b.price-a.price);
+        $("products").innerHTML=list.map(p=>`
+         <article class="product">
+           <div class="product-img" onclick="openQuickView(${p.id})">${pic(p)}
+             <button class="wishlist-btn ${wishlist.includes(p.id)?"active":""}" aria-label="Toggle wishlist" onclick="event.stopPropagation();toggleWishlist(${p.id})">❤️</button>
+           </div>
+           <div class="product-info">
+             <span class="tag">${p.cat}</span>
+             <h3 onclick="openQuickView(${p.id})">${p.name}</h3>
+             <p>${p.desc}</p>
+             <div class="price">${formatPrice(p.price)} <span class="old">${formatPrice(p.old)}</span></div>
+             <div class="btn-group">
+               <button class="quickview-btn" onclick="openQuickView(${p.id})" aria-label="Quick view">👁️</button>
+               <button class="add" onclick="openQuickView(${p.id})">Select Size</button>
+             </div>
+           </div>
+         </article>`).join("")||'<div class="empty">No products found.</div>';
+        document.querySelectorAll(".filter").forEach(b=>b.classList.toggle("active",b.dataset.filter===filter));
+      }
+      function setFilter(f){filter=f;renderProducts();$("shop").scrollIntoView({behavior:"smooth"})}
+
+      function toggleWishlist(id){
+        if(wishlist.includes(id)){wishlist=wishlist.filter(i=>i!==id);showToast("Removed from Wishlist")}
+        else{wishlist.push(id);showToast("Added to Wishlist ❤️")}
+        persist();renderProducts();renderWishlist();
+      }
+
+      function addToCart(id,size){
+        const x=cart.find(i=>i.id===id&&i.size===size);
+        x?x.qty++:cart.push({id,size,qty:1});
+        persist();renderCart();openCart();showToast("Added to Cart 🛍️");
+      }
+
+      function totals(){
+        const sub=cart.reduce((a,i)=>a+prod(i.id).price*i.qty,0);
+        const disc=COUPONS[coupon]?Math.round(sub*COUPONS[coupon]/100):0;
+        const ship=!sub||sub-disc>=CONFIG.FREE_DELIVERY_OVER?0:CONFIG.DELIVERY_CHARGE;
+        return{sub,disc,ship,total:sub-disc+ship};
+      }
+      const couponUI=()=>!cart.length?"":coupon?⁠ <div class="sumrow"><span>Coupon ${coupon} (${COUPONS[coupon]}% off)</span><button class="lnkbtn" onclick="removeCoupon()">Remove</button></div> ⁠:⁠ <div class="coupon"><input id="couponIn" placeholder="Coupon code" aria-label="Coupon code"><button class="goldbtn" onclick="applyCoupon()">Apply</button></div> ⁠;
+      function applyCoupon(){const c=$("couponIn").value.trim().toUpperCase();if(COUPONS[c]){coupon=c;persist();renderCart();showToast("Coupon applied")}else showToast("Invalid coupon code")}
+      function removeCoupon(){coupon="";persist();renderCart()}
+      function renderCart(){
+        $("cartCount").textContent=cart.reduce((a,b)=>a+b.qty,0);
+        $("cartItems").innerHTML=cart.length?cart.map((i,idx)=>{
+          const p=prod(i.id);
+          return `<div class="cartitem"><div class="thumb">${pic(p)}</div>
+            <div><b>${p.name}</b><small>Size: ${i.size} · ${formatPrice(p.price)} each</small>
+              <div class="qty"><button onclick="changeQty(${idx},-1)" aria-label="Decrease">−</button>${i.qty}<button onclick="changeQty(${idx},1)" aria-label="Increase">+</button></div></div>
+            <b>${formatPrice(p.price*i.qty)}</b></div>`;
+        }).join(""):'<div class="empty">Your cart is empty.</div>';
+        const t=totals();
+        const left=CONFIG.FREE_DELIVERY_OVER-(t.sub-t.disc);
+        $("cartSummary").innerHTML=⁠ ${couponUI()}${cart.length&&left>0? ⁠<div class="notice" style="margin:8px 0;color:var(--gold)">Aro ${formatPrice(left)} kinle delivery free!</div>⁠ :""}<div class="sumrow"><span>Subtotal</span><span>${formatPrice(t.sub)}</span></div>${t.disc? ⁠<div class="sumrow"><span>Discount</span><span>−${formatPrice(t.disc)}</span></div>`:""}
+          <div class="sumrow"><span>Delivery</span><span>${t.ship?formatPrice(t.ship):"Free"}</span></div>
+          <div class="total"><span>Total</span><span>${formatPrice(t.total)}</span></div>`;
+      }
+      function changeQty(idx,n){
+        cart[idx].qty+=n;
+        if(cart[idx].qty<=0)cart.splice(idx,1);
+        persist();renderCart();
+      }
+
+      function renderWishlist(){
+        $("wishlistCount").textContent=wishlist.length;
+        $("wishlistItems").innerHTML=wishlist.length?wishlist.map(id=>{
+          const p=prod(id);
+          return `<div class="cartitem"><div class="thumb">${pic(p)}</div>
+            <div><b>${p.name}</b><small>${formatPrice(p.price)}</small>
+              <button class="add" style="margin-top:8px;padding:6px;width:100%" onclick="openQuickView(${p.id})">Select Size</button></div>
+            <button class="close" onclick="toggleWishlist(${p.id})" aria-label="Remove">×</button></div>`;
+        }).join(""):'<div class="empty">Your wishlist is empty.</div>';
+      }
+
+      function renderResellerDashboard(){
+        const rows=resellerSales.map(r=>({...r,p:prod(r.id)}));
+        const sum=(k)=>rows.reduce((a,r)=>a+r[k],0);
+        const money=(k)=>rows.reduce((a,r)=>a+r[k]*r.p.price,0);
+        $("dashTotalSales").textContent=formatPrice(money("total"));
+        $("dashMonthSales").textContent=formatPrice(money("month"));
+        $("dashWeekSales").textContent=formatPrice(money("week"));
+        $("dashTotalQty").textContent=sum("total")+" pcs";
+        $("dashMonthQty").textContent=sum("month")+" pcs";
+        $("dashWeekQty").textContent=sum("week")+" pcs";
+        $("dashTotalProfit").textContent=formatPrice(sum("total")*CONFIG.PROFIT_PER_PIECE);
+        $("dashProfitNote").textContent=sum("total")+" pcs × ৳"+CONFIG.PROFIT_PER_PIECE;
+        $("dashTableBody").innerHTML=rows.map(r=>`<tr><td><b>${r.p.name}</b></td><td>${r.week}</td><td>${r.month}</td><td>${r.total} pcs</td>
+          <td>${formatPrice(r.total*r.p.price)}</td><td style="color:var(--ok);font-weight:700">${formatPrice(r.total*CONFIG.PROFIT_PER_PIECE)}</td></tr>`).join("");
+      }
+
+      function renderAll(){renderProducts();renderCart();renderWishlist();renderResellerDashboard()}
+
+      // ---- modals & drawers ----
+      function closeAll(){
+        $("overlay").classList.remove("show");
+        document.querySelectorAll(".drawer,.modal").forEach(x=>x.classList.remove("open","show"));
+      }
+      function openModal(id){closeAll();$("overlay").classList.add("show");const m=$(id);m.classList.add("show");setTimeout(()=>(m.querySelector("input,select,.checkout")||m).focus(),50)}
+      function openDrawer(id){closeAll();$("overlay").classList.add("show");$(id).classList.add("open")}
+      function openCart(){renderCart();openDrawer("cart")}
+      function openWishlist(){renderWishlist();openDrawer("wishlistDrawer")}
+      function openInfo(k){$("infoTitle").textContent=INFO[k].t;$("infoBody").textContent=INFO[k].b;openModal("infoModal")}
+      document.addEventListener("keydown",e=>{if(e.key==="Escape")closeAll()});
+
+      function openQuickView(id){
+        const p=prod(id),sizes=SIZES[p.cat];
+        selectedSize=sizes[0];
+        $("quickViewContent").innerHTML=`
+          <div style="font-size:70px;background:#151515;border-radius:12px;margin-bottom:15px;overflow:hidden;height:220px;display:grid;place-items:center">${pic(p)}</div>
+          <span class="tag">${p.cat}</span>
+          <h3 style="font:600 24px 'Playfair Display',serif;margin:5px 0">${p.name}</h3>
+          <p style="color:var(--muted);font-size:13px;margin-bottom:12px">${p.desc}</p>
+          <div class="price" style="font-size:20px;margin-bottom:15px">${formatPrice(p.price)} <span class="old">${formatPrice(p.old)}</span></div>
+          <label style="font-size:12px;color:var(--muted)">Select ${p.cat==="Shoes"?"Size (EU)":"Size"}:</label>
+          <div class="size-options">${sizes.map((s,i)=>⁠ <button class="size-btn ${i?"":"active"}" onclick="pickSize(this,'${s}')">${s}</button> ⁠).join("")}</div>
+          <button class="checkout" onclick="addToCart(${p.id},selectedSize)">Add to Cart</button>`;
+        openModal("quickViewModal");
+      }
+      function pickSize(btn,s){
+        selectedSize=s;
+        btn.parentNode.querySelectorAll(".size-btn").forEach(b=>b.classList.remove("active"));
+        btn.classList.add("active");
+      }
+
+      function trackOrders(){
+        const ph=$("trackPhone").value.trim().replace(/[\s-]/g,"").replace(/^(\+?88)/,"");
+        const list=store.get("tz_orders",[]).filter(o=>o.phone===ph).reverse();
+        $("trackResult").innerHTML=list.length?list.map(o=>⁠ <div class="cartitem" style="grid-template-columns:1fr auto"><div><b>${o.id}</b><small>${new Date(o.at).toLocaleDateString()} · ${o.items.reduce((a,i)=>a+i.qty,0)} pcs</small></div><div style="text-align:right"><b>${formatPrice(o.total)}</b><small style="color:var(--gold)">${o.status||"Pending"}</small></div></div> ⁠).join(""):'<div class="empty">No orders found for this number.</div>';
+      }
+      function makeRefLink(){
+        const c=$("refCodeIn").value.trim().toUpperCase();
+        if(!/^[A-Z0-9_-]{2,20}$/.test(c)){showToast("Use letters and numbers only");return}
+        const base=location.protocol.startsWith("http")?location.origin+location.pathname:location.href.split("?")[0];
+        const link=base+"?ref="+c;
+        $("refLink").value=link;$("refOut").style.display="block";
+        $("waShare").href="https://wa.me/?text="+encodeURIComponent("Shop TAYZO essentials: "+link);
+        $("fbShare").href="https://www.facebook.com/sharer/sharer.php?u="+encodeURIComponent(link);
+      }
+      function copyRef(){
+        const i=$("refLink");i.select();
+        try{navigator.clipboard.writeText(i.value)}catch(e){document.execCommand("copy")}
+        showToast("Link copied");
+      }
+      async function requestPayout(){
+        const code=$("refCodeIn").value.trim().toUpperCase();
+        const num=$("payNum").value.trim().replace(/[\s-]/g,""),amt=parseInt($("payAmt").value,10),err=$("payErr");
+        let m="";
+        if(!/^[A-Z0-9_-]{2,20}$/.test(code))m="Upore nijer reseller code din.";
+        else if(!/^01[3-9]\d{8}$/.test(num))m="Enter a valid mobile number.";
+        else if(!(amt>=CONFIG.MIN_PAYOUT))m="Minimum payout is ৳"+CONFIG.MIN_PAYOUT+".";
+        err.textContent=m;err.style.display=m?"block":"none";if(m)return;
+        const payout={refCode:code,method:$("payMethod").value,number:num,amount:amt};
+        const result=await postToBackend({action:"payout_request",...payout});
+        if(!result.ok)return;
+        const list=store.get("tz_payouts",[]);list.push({...payout,status:"Requested",at:new Date().toISOString()});store.set("tz_payouts",list);
+        closeAll();alert("Payout request of ৳"+amt+" received."+(result.demo?" (Demo mode: saved in this browser only.)":""));
+      }
+
+      function loginResellerDashboard(){
+        const e=$("resEmail").value.trim(),p=$("resPass").value,err=$("resErr");
+        if(!e||!p){err.textContent="Enter your phone/email and password.";err.style.display="block";return}
+        err.style.display="none";
+        renderResellerDashboard();openModal("resellerDashboardModal");
+      }
+
+      function openCheckoutModal(){
+        if(!cart.length){showToast("Your cart is empty");return}
+        const t=totals();
+        $("checkoutSummary").textContent=⁠ Subtotal ${formatPrice(t.sub)}${t.disc?" − Discount "+formatPrice(t.disc):""} + Delivery ${t.ship?formatPrice(t.ship):"Free"} = ${formatPrice(t.total)}. Fill in your details to confirm. ⁠;
+        $("refNote").textContent=refCode?"Referral code: "+refCode:"";
+        $("phoneErr").style.display="none";
+        openModal("checkoutModal");
+      }
+
+      async function applyReseller(){
+        const n=$("rname").value.trim(),ph=$("rphone").value.trim().replace(/[\s-]/g,""),err=$("rErr");
+        if(!n||!/^(\+?88)?01[3-9]\d{8}$/.test(ph)){err.textContent="Enter your name and a valid mobile number.";err.style.display="block";return}
+        err.style.display="none";
+        const application={name:n,phone:ph,email:$("remail").value.trim()};
+        const result=await postToBackend({action:"reseller_apply",...application});
+        if(!result.ok)return;
+        const apps=store.get("tz_apps",[]);apps.push({...application,at:new Date().toISOString()});store.set("tz_apps",apps);
+        alert("Thank you "+n+"! Your application has been received."+(result.demo?" (Demo mode: saved in this browser only.)":""));
+        closeAll();
+      }
+
+      async function submitOrder(){
+        const name=$("cName").value.trim(),address=$("cAddress").value.trim();
+        const phone=$("cPhone").value.trim().replace(/[\s-]/g,"").replace(/^(\+?88)/,"");
+        const bad=!/^01[3-9]\d{8}$/.test(phone);
+        $("phoneErr").style.display=bad?"block":"none";
+        if(!name||!address||bad){if(!name||!address)showToast("Please fill in all details");return}
+        const t=totals();
+        const lines=cart.map(i=>⁠ ${prod(i.id).name} (Size ${i.size}) x${i.qty} = ৳${prod(i.id).price*i.qty} ⁠);
+        const order={id:"TZ"+Date.now().toString().slice(-8),name,phone,address,ref:refCode,items:cart,subtotal:t.sub,discount:t.disc,coupon,delivery:t.ship,total:t.total,status:"Pending",at:new Date().toISOString()};
+        const result=await postToBackend({action:"place_order",...order});
+        if(!result.ok)return;
+        const orders=store.get("tz_orders",[]);orders.push(order);store.set("tz_orders",orders);
+        const msg=⁠ New TAYZO order ${order.id}\n${lines.join("\n")}\nSubtotal: ৳${t.sub}\n${t.disc?`Discount (${coupon}): -৳${t.disc}\n ⁠:""}Delivery: ৳${t.ship}\nTotal: ৳${t.total} (COD)\nName: ${name}\nPhone: ${phone}\nAddress: ${address}⁠ +(refCode? ⁠\nRef: ${refCode}`:"");
+        if(CONFIG.WHATSAPP)window.open("https://wa.me/"+CONFIG.WHATSAPP+"?text="+encodeURIComponent(msg),"_blank");
+        cart=[];coupon="";persist();renderCart();closeAll();
+        alert("Thank you "+name+"! Order "+order.id+" is placed. We will call you to confirm.");
+      }
+
+      // ---- init ----
+      (function init(){
+        cart=store.get("tz_cart",[]).filter(i=>prod(i.id));
+        wishlist=store.get("tz_wish",[]).filter(prod);
+        currentCurrency=store.get("tz_cur","BDT");coupon=store.get("tz_coupon","");if(!COUPONS[coupon])coupon="";
+        $("payNote").textContent="Minimum payout ৳"+CONFIG.MIN_PAYOUT+". Requests are checked against your delivered orders.";$("currencySelect").value=currentCurrency;
+        const r=new URLSearchParams(location.search).get("ref");
+        if(r&&/^[A-Za-z0-9_-]{2,20}$/.test(r)){refCode=r.toUpperCase();store.set("tz_ref",refCode)}else refCode=store.get("tz_ref","");
+        $("topbar").textContent="TAYZO PRIVATE COLLECTION — FREE DELIVERY ON ORDERS OVER ৳"+CONFIG.FREE_DELIVERY_OVER.toLocaleString("en-BD");
+        document.querySelectorAll(".modal").forEach(m=>{m.setAttribute("role","dialog");m.setAttribute("aria-modal","true")});
+        if(CONFIG.WHATSAPP){const w=$("waFloat");w.href="https://wa.me/"+CONFIG.WHATSAPP;w.style.display="grid"}
+        renderAll();
+      })();
+    </script>
+  </body>
+</html>
